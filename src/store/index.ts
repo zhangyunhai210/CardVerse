@@ -1,4 +1,4 @@
-/**
- * 全局 store 聚合导出占位：接入 Redux / Zustand 后在此导出 configureStore 或 create。
- */
-export {};
+export { useCardStore } from '@/store/useCardStore';
+export { useUiStore } from '@/store/useUiStore';
+export type { CardEntity, CardId } from '@/store/cardSlice';
+export type { UiPreferences } from '@/store/uiSlice';

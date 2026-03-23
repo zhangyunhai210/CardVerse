@@ -1,12 +1,16 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 /**
- * 3D 长廊惯性滑动与分页加载（占位）
+ * 长廊横向滚动偏移（像素），供 2D 回退列表与 WebGL 对齐同一套「页」概念。
  */
 export function useInfiniteScroll3D() {
-  const [offset, setOffset] = useState(0);
-  const onScrollEnd = useCallback(() => {
-    setOffset((v) => v);
+  const [offsetX, setOffsetX] = useState(0);
+  const lastTs = useRef<number | null>(null);
+
+  const onScroll = useCallback((x: number) => {
+    setOffsetX(x);
+    lastTs.current = Date.now();
   }, []);
-  return { offset, onScrollEnd };
+
+  return { offsetX, onScroll, lastTs };
 }

@@ -1,12 +1,18 @@
+import type { MapProvider } from '@/navigation/MapLauncher';
+
 /**
- * UI 状态：横竖屏、放大镜等（占位）
+ * 全局 UI 偏好：放大镜、OCR、默认地图厂商（持久化可后续接 AsyncStorage）。
  */
-export interface UiState {
-  isGalleryLandscape: boolean;
+export interface UiPreferences {
   magnifierOpen: boolean;
+  magnifierCardId: string | null;
+  ocrEnabled: boolean;
+  defaultMapProvider: MapProvider;
 }
 
-export const defaultUiState: UiState = {
-  isGalleryLandscape: false,
+export const defaultUiPreferences: UiPreferences = {
   magnifierOpen: false,
+  magnifierCardId: null,
+  ocrEnabled: true,
+  defaultMapProvider: 'google',
 };

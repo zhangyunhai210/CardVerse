@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# 移动端构建占位：接入 React Native CLI / EAS 后在此执行
-echo "build-mobile: 请接入 RN 构建流程后实现"
+# 移动端：本地请使用 npx expo run:android / run:ios；EAS 请使用 eas build
+echo "请使用: npx expo run:android 或 npx expo run:ios，或配置 EAS Build 后执行 eas build。"

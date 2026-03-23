@@ -2,21 +2,55 @@
   "name": "cardverse",
   "version": "0.1.0",
   "private": true,
-  "description": "CardVerse 跨端前端（React Native + Web）骨架，详见 docs/ARCHITECTURE.md",
+  "description": "CardVerse 跨端前端（React Native + Web），详见 docs/ARCHITECTURE.md",
+  "main": "expo-router/entry",
   "scripts": {
+    "start": "expo start",
+    "web": "expo start --web",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
     "build:web": "bash scripts/build-web.sh",
     "build:mobile": "bash scripts/build-mobile.sh",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "@babel/core": "^7.29.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "babel-preset-expo": "^55.0.12",
+    "expo": "~52.0.0",
+    "expo-constants": "~17.0.8",
+    "expo-gl": "~15.0.5",
+    "expo-linking": "~7.0.5",
+    "expo-location": "~18.0.10",
+    "expo-router": "~4.0.22",
+    "expo-splash-screen": "~0.29.24",
+    "expo-sqlite": "~15.1.4",
+    "expo-status-bar": "~2.0.1",
+    "expo-system-ui": "~4.0.9",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.76.9",
+    "react-native-gesture-handler": "~2.20.2",
+    "react-native-reanimated": "~3.16.1",
+    "react-native-safe-area-context": "4.12.0",
+    "react-native-screens": "~4.4.0",
+    "react-native-web": "~0.19.13",
+    "tesseract.js": "^7.0.0",
+    "three": "^0.183.2",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
     "@types/react": "^18.2.0",
-    "typescript": "^5.4.0"
+    "@types/three": "^0.183.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "jsdom": "^29.0.1",
+    "typescript": "^5.4.0",
+    "vitest": "^4.1.0"
   }
 }

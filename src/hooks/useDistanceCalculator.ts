@@ -1,4 +1,4 @@
-import { haversineKm } from '../utils/math';
+import { haversineKm } from '@/utils/math';
 
 /**
  * 根据当前位置与目标经纬度计算距离（千米）。

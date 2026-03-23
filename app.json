@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "CardVerse",
+    "slug": "cardverse",
+    "scheme": "cardverse",
+    "version": "1.0.0",
+    "orientation": "default",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "用于按距离排序名片并在地图上展示位置。",
+        "NSPhotoLibraryUsageDescription": "用于从相册选择名片图片以进行 OCR 识别。"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0f0f12"
+      },
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": ["expo-router", "expo-sqlite", "expo-location"]
+  }
+}

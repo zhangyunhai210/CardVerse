@@ -1,12 +1,21 @@
-/**
- * 纹理缓存：横竖屏切换时复用 GPU 纹理，减少重复解码。
- */
-const cache = new Map<string, unknown>();
+import * as THREE from 'three';
 
-export function getTextureFromCache(key: string): unknown | undefined {
+/**
+ * 纹理缓存：跨横竖屏切换复用同一 Texture 实例，降低 GPU 上传次数。
+ */
+const cache = new Map<string, THREE.Texture>();
+
+export function getTextureFromCache(key: string): THREE.Texture | undefined {
   return cache.get(key);
 }
 
-export function setTextureCache(key: string, texture: unknown): void {
+export function setTextureCache(key: string, texture: THREE.Texture): void {
+  const prev = cache.get(key);
+  if (prev) prev.dispose();
   cache.set(key, texture);
+}
+
+export function disposeAllTextures(): void {
+  cache.forEach((t) => t.dispose());
+  cache.clear();
 }

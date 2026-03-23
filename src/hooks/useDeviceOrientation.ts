@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Dimensions } from 'react-native';
 
 /**
- * 监听横竖屏变化（占位）：RN 用 Dimensions / Web 用 matchMedia orientation。
+ * 根据窗口宽高判断横竖屏（与画廊横屏体验一致）。
  */
 export function useDeviceOrientation(): 'portrait' | 'landscape' {
-  const [o] = useState<'portrait' | 'landscape'>('portrait');
+  const [o, setO] = useState<'portrait' | 'landscape'>(() => {
+    const { width, height } = Dimensions.get('window');
+    return height >= width ? 'portrait' : 'landscape';
+  });
+
+  useEffect(() => {
+    const sub = Dimensions.addEventListener('change', ({ window }) => {
+      setO(window.height >= window.width ? 'portrait' : 'landscape');
+    });
+    return () => sub.remove();
+  }, []);
+
   return o;
 }

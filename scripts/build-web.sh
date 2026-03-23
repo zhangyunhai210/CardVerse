@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# Web 构建占位：接入 Vite/Webpack 后在此执行打包
-echo "build-web: 请接入前端打包工具后实现"
+# Web 静态导出：产物在 dist/，可部署到任意静态托管
+exec npx expo export --platform web "$@"

@@ -122,6 +122,13 @@ CardVerse/
 3. **地图统一**：Mapbox GL JS（Web）与 Mapbox RN SDK（移动端）共享业务层与 token 配置。
 4. **OCR**：Tesseract.js + WASM 可在 Web 与部分 RN 环境运行；重计算任务可考虑后台队列或原生模块。
 
-## 仓库内当前状态
+## 仓库内当前状态（已实现）
 
-本仓库已按上述目录建立 **占位文件与最小实现**（如 Haversine、Levenshtein），便于后续接入 React Navigation、打包工具与原生依赖。具体接入步骤见 `README.md`。
+- **运行时**：Expo SDK 52 + `expo-router`（`app/` 为路由，`src/` 为业务模块）。
+- **数据**：`expo-sqlite` 持久化 + 首次启动种子数据；`zustand` 全局状态。
+- **Web 长廊**：`src/gl/Scene.tsx` + `GalleryController` + `Card3DNode`（`@react-three/fiber`）。
+- **原生长廊**：横向 `FlatList` 占位，便于后续替换为 `expo-gl` 同场景。
+- **地图跳转**：`expo-linking` 打开各厂商地图 URL。
+- **OCR**：Web 端 `tesseract.js` 动态导入；原生端返回 `null`（可接 Vision/第三方模块）。
+
+开发与构建命令见根目录 `README.md`。
