@@ -1,0 +1,22 @@
+{
+  "name": "cardverse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CardVerse 跨端前端（React Native + Web）骨架，详见 docs/ARCHITECTURE.md",
+  "scripts": {
+    "build:web": "bash scripts/build-web.sh",
+    "build:mobile": "bash scripts/build-mobile.sh",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "typescript": "^5.4.0"
+  }
+}
