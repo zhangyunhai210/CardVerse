@@ -2,7 +2,7 @@
 
 跨端纯前端应用：**Expo SDK 52**（React Native + Web），包含名片列表、SQLite 离线数据、Mapbox 地理编码（可选）、Web 端 **react-three-fiber** 3D 长廊、Tesseract OCR（仅 Web）。
 
-详细目录与模块说明见 [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md)。
+项目文档索引见 [docs/README.md](./docs/README.md)（含 **架构**、**全模块清单**、**配置说明**）。
 
 ## 环境要求
 
